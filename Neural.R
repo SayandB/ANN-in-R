@@ -22,7 +22,7 @@ fit <- neuralnet(setosa + versicolor + virginica ~ Sepal.Length + Sepal.Width + 
 #Plotting Model
 plot(fit,col.entry="blue",col.hidden="green",col.out = "red")
 
-#Cross Validation
+#Cross Validation using set.seed() function
 sol <- round(compute(fit, test[,1:(ncol(test)-3)])$net.result)
 t1 <- sol
 t1[,1] <- abs(t1[,1]-test$setosa)
